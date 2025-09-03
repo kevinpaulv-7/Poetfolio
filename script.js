@@ -39,3 +39,52 @@ if (heroPhoto) {
     heroPhoto.style.transform = "scale(1)";
   });
 }
+
+  const logo = document.querySelector(".logo");
+  const menuToggle = document.getElementById("menu-toggle");
+  const navLinks = document.getElementById("nav-links");
+  const closeBtn = document.getElementById("close-btn");
+
+  // Set base styles
+  navLinks.style.display = "flex";
+  navLinks.style.gap = "1rem";
+  menuToggle.style.cursor = "pointer";
+  menuToggle.style.fontSize = "1.5rem";
+  menuToggle.style.display = "none"; 
+  closeBtn.style.cursor = "pointer";
+
+  function handleResize() {
+    if (window.innerWidth <= 700) {
+      navLinks.style.display = "none"; 
+      menuToggle.style.display = "block"; 
+      closeBtn.style.display = "block"; // show only on phone
+    } else {
+      navLinks.style.display = "flex"; 
+      navLinks.style.flexDirection = "row";
+      navLinks.style.position = "static";
+      menuToggle.style.display = "none"; 
+      closeBtn.style.display = "none"; // hide on desktop
+    }
+  }
+
+  // Open menu
+  menuToggle.addEventListener("click", () => {
+    navLinks.style.display = "flex";
+    navLinks.style.flexDirection = "column";
+    navLinks.style.position = "absolute";
+    navLinks.style.top = "60px";
+    navLinks.style.right = "20px";
+    navLinks.style.background = "#111";
+    navLinks.style.padding = "1rem";
+    closeBtn.style.paddingLeft = "25px"
+  });
+
+  // Close menu (only works in phone mode)
+  closeBtn.addEventListener("click", () => {
+    if (window.innerWidth <= 700) {
+      navLinks.style.display = "none";
+    }
+  });
+
+  window.addEventListener("resize", handleResize);
+  window.addEventListener("load", handleResize);
