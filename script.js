@@ -74,7 +74,9 @@ if (navLinks && menuToggle && closeBtn) {
     navLinks.style.position = "absolute";
     navLinks.style.top = "60px";
     navLinks.style.right = "20px";
-    navLinks.style.background = "#111";
+    navLinks.style.background = "#111"; 
+    navLinks.style.width = "190px";
+    navLinks.style.border = "1px solid #444";
     navLinks.style.padding = "1rem";
     closeBtn.style.paddingLeft = "25px";
     closeBtn.style.display = "block"; // Show close button only when menu is open
