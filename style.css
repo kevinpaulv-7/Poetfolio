@@ -45,6 +45,26 @@ nav ul li a {
 nav ul li a.active {
   border-bottom: 2px solid #00ffff;
 }
+#menu-toggle{
+  display: none;
+  font-size: 2rem;
+  color: #00ffff;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  cursor: pointer;
+  z-index: 1001;
+}
+#close-btn  {
+  display: none;
+  font-size: 2rem;
+  color: #00ffff;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  cursor: pointer;
+  z-index: 1001;
+}
 
 /* Hero Section */
 .hero {

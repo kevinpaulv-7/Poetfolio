@@ -12,7 +12,9 @@
 <!-- Navigation -->
 <nav>
   <div class="logo">Kevin Paul</div>
-  <ul>
+  <div id="menu-toggle">☰</div>
+  <div id="close-btn">✖</div>
+  <ul id="nav-links"> 
     <li><a href="#hero">Home</a></li>
     <li><a href="#about">About</a></li>
     <li><a href="#projects">Projects</a></li>
@@ -27,7 +29,7 @@
 <h1>Hi, I'm Kevin Paul</h1>
 <p>Web Developer & UI Designer</p>
 <div class="hero-photo" id="heroCanvas">
-  <img src="./kevin.jpg" alt="Kevin Paul">
+  <img src="./img/kevin.jpg" alt="Kevin Paul">
 </div>
 </section>
 
@@ -81,11 +83,26 @@
 <section id="certificates">
   <h2> Certificates</h2>
   <div class="course-list">
-    <div class="course-card"><h3>Programming in Python</h3><p>Issued by: Cisco</p></div>
-    <div class="course-card"><h3>Programming in Java</h3><p>Issued by: NPTEL</p></div>
-    <div class="course-card"><h3>Introduction to Cyber Security</h3><p>Issued by: Cisco</p></div>
-    <div class="course-card"><h3>Database Management System</h3><p>Issued by: Udemy</p></div>
-    <div class="course-card ongoing"><h3>JavaScript</h3><p>Issued by: Udemy </p></div>
+    <div class="course-card">
+      <h3>Programming in Python</h3>
+      <p>Issued by: Cisco</p>
+    </div>
+    <div class="course-card">
+      <h3>Programming in Java</h3>
+      <p>Issued by: NPTEL</p>
+    </div>
+    <div class="course-card">
+      <h3>Introduction to Cyber Security</h3>
+      <p>Issued by: Cisco</p>
+    </div>
+    <div class="course-card">
+      <h3>Database Management System</h3>
+      <p>Issued by: Udemy</p>
+    </div>
+    <div class="course-card ongoing">
+      <h3>JavaScript</h3>
+      <p>Issued by: Udemy <span class="status">(Ongoing)</span></p>
+    </div>
   </div>
 </section>
 
@@ -114,9 +131,18 @@
 <section id="achievements">
   <h2> Achievements</h2>
   <div class="achievement-list">
-    <div class="achievement-card"><h3>Code Sprint  2nd Prize</h3><p>Won 2nd prize in the coding event at the Symposium conducted by Jerusalem College of Engineering.</p></div>
-    <div class="achievement-card"><h3>Web Forge Organizer</h3><p>Organized and conducted a technical event titled "Web Forge" focused on Full Stack Web Development at college.</p></div>
-    <div class="achievement-card"><h3>National Hackathon Participant</h3><p>Participated in a national level hackathon conducted by SIRM College.</p></div>
+    <div class="achievement-card">
+      <h3>Code Sprint  2nd Prize</h3>
+      <p>Won 2nd prize in the coding event at the Symposium conducted by Jerusalem College of Engineering.</p>
+    </div>
+    <div class="achievement-card">
+      <h3>Web Forge Organizer</h3>
+      <p>Organized and conducted a technical event titled "Web Forge" focused on Full Stack Web Development at college.</p>
+    </div>
+    <div class="achievement-card">
+      <h3>National Hackathon Participant</h3>
+      <p>Participated in a national level hackathon conducted by SIRM College.</p>
+    </div>
   </div>
 </section>
 
@@ -135,7 +161,3 @@
 <script src="script.js"></script>
 </body>
 </html>
-
-
-
-

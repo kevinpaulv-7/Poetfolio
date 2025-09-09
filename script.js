@@ -3,7 +3,7 @@ document.querySelectorAll("nav ul li a").forEach(anchor => {
   anchor.addEventListener("click", function (e) {
     e.preventDefault();
     const targetId = this.getAttribute("href");
-    document.querySelector(targetId).scrollIntoView({
+    document.querySelector(targetId)?.scrollIntoView({
       behavior: "smooth"
     });
   });
@@ -11,8 +11,8 @@ document.querySelectorAll("nav ul li a").forEach(anchor => {
 
 // Highlight active nav link on scroll
 window.addEventListener("scroll", () => {
-  let sections = document.querySelectorAll("section");
-  let scrollPos = window.scrollY + 100;
+  const sections = document.querySelectorAll("section");
+  const scrollPos = window.scrollY + 100;
 
   sections.forEach(section => {
     if (
@@ -29,7 +29,7 @@ window.addEventListener("scroll", () => {
   });
 });
 
-// Floating animation enhancement for hero photo
+// Floating animation for hero photo
 const heroPhoto = document.querySelector(".hero-photo");
 if (heroPhoto) {
   heroPhoto.addEventListener("mouseover", () => {
@@ -40,35 +40,35 @@ if (heroPhoto) {
   });
 }
 
-  const logo = document.querySelector(".logo");
-  const menuToggle = document.getElementById("menu-toggle");
-  const navLinks = document.getElementById("nav-links");
-  const closeBtn = document.getElementById("close-btn");
+const menuToggle = document.getElementById("menu-toggle");
+const navLinks = document.getElementById("nav-links");
+const closeBtn = document.getElementById("close-btn");
 
-  // Set base styles
-  navLinks.style.display = "flex";
-  navLinks.style.gap = "1rem";
+// Initialize only if elements exist
+if (navLinks && menuToggle && closeBtn) {
   menuToggle.style.cursor = "pointer";
   menuToggle.style.fontSize = "1.5rem";
-  menuToggle.style.display = "none"; 
+  menuToggle.style.display = "none";
   closeBtn.style.cursor = "pointer";
+  closeBtn.style.display = "none"; // Initially hidden
 
   function handleResize() {
     if (window.innerWidth <= 700) {
-      navLinks.style.display = "none"; 
-      menuToggle.style.display = "block"; 
-      closeBtn.style.display = "block"; // show only on phone
+      navLinks.style.display = "none";
+      menuToggle.style.display = "block";
+      closeBtn.style.display = "none"; // Keep close button hidden initially
     } else {
-      navLinks.style.display = "flex"; 
+      navLinks.style.display = "flex";
       navLinks.style.flexDirection = "row";
       navLinks.style.position = "static";
-      menuToggle.style.display = "none"; 
-      closeBtn.style.display = "none"; // hide on desktop
+      menuToggle.style.display = "none";
+      closeBtn.style.display = "none";
     }
   }
 
   // Open menu
   menuToggle.addEventListener("click", () => {
+    menuToggle.style.display = "none";
     navLinks.style.display = "flex";
     navLinks.style.flexDirection = "column";
     navLinks.style.position = "absolute";
@@ -76,15 +76,16 @@ if (heroPhoto) {
     navLinks.style.right = "20px";
     navLinks.style.background = "#111";
     navLinks.style.padding = "1rem";
-    closeBtn.style.paddingLeft = "25px"
+    closeBtn.style.paddingLeft = "25px";
+    closeBtn.style.display = "block"; // Show close button only when menu is open
   });
 
-  // Close menu (only works in phone mode)
+  // Close menu
   closeBtn.addEventListener("click", () => {
-    if (window.innerWidth <= 700) {
-      navLinks.style.display = "none";
-    }
+    navLinks.style.display = "none";
+    closeBtn.style.display = "none"; // Hide close button when menu is closed
   });
 
   window.addEventListener("resize", handleResize);
   window.addEventListener("load", handleResize);
+}
